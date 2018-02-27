@@ -48,13 +48,13 @@
 $brand-primary: #cf1993;
 $brand-secondary: #7b8acc;
 $grey: #252525;
-$black: #000;
+$black: rgb(24, 24, 24);
 
 // Configure your grid here
 // You don't need to change it!
 
 $content-width: 100vw;
-$gutter: 0;
+$gutter: 1em;
 $columns: 3;
 
 $row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
