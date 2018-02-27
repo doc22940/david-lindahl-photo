@@ -27,7 +27,7 @@ const Project = (props) => {
           {palette => (
             <section
               className={styles.header}
-              style={{ backgroundColor: palette.vibrant }}
+              style={{ backgroundColor: palette.lightMuted }}
             >
               <div className={styles.title}>
                 <Fade down duration={1250} tag="h1">

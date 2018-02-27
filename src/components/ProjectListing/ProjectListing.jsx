@@ -37,7 +37,7 @@ export default class ProjectListing extends React.PureComponent {
                   {palette => (
                     <div
                       className={styles.overlay}
-                      style={{ backgroundColor: palette.vibrant }}
+                      style={{ backgroundColor: palette.lightMuted }}
                     />
 					)}
                 </Palette>

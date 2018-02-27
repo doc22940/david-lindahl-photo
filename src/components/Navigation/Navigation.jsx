@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import Headroom from 'react-headroom';
-import { FaInstagram, FaBehance, FaDribbble } from 'react-icons/lib/fa';
+import { FaInstagram, FaTwitter, FaYoutube, Fa500px } from 'react-icons/lib/fa';
 import { slide as Menu } from 'react-burger-menu';
 import { Fade } from 'react-reveal';
 import config from '../../../config/SiteConfig';
@@ -49,25 +49,25 @@ export default class Navigation extends Component {
             <div className={styles.socialMedia}>
               <span>
                 <a
-                  href="https://www.instagram.com/lekoarts.de"
+                  href="https://www.instagram.com/austriker"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://www.behance.net/lekoarts"
+                  href="https://500px.com/austriker"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaBehance />
+                  <Fa500px />
                 </a>
                 <a
-                  href="https://dribbble.com/LeKoArts"
+                  href="http://austriker.com/videos"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaDribbble />
+                  <FaYoutube />
                 </a>
               </span>
             </div>
