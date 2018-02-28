@@ -24,8 +24,8 @@ module.exports = {
   themeColor: '#3498DB',
   backgroundColor: '#2b2e3c',
   // Settings for typography.js
-  headerFontFamily: 'Merriweather',
-  bodyFontFamily: 'Roboto',
+  headerFontFamily: 'Playfair Display',
+  bodyFontFamily: 'Lato',
   baseFontSize: '16px',
 };
 
