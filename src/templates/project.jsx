@@ -90,30 +90,69 @@ const Project = (props) => {
   );
 };
 
-export default Project;
-
 /* eslint no-undef: "off" */
+// export const pageQuery = graphql`
+//   query ProjectPostBySlug($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         title
+//         date
+//         client
+//         service
+//         cover {
+//           childImageSharp {
+//             resize(width: 800) {
+//               src
+//             }
+//           }
+//         }
+//       }
+//       fields {
+//         slug
+//       }
+//       excerpt
+//     }
+//   }
+// `;
+
 export const pageQuery = graphql`
-  query ProjectPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        date
-        client
-        service
-        cover {
-          childImageSharp {
-            resize(width: 800) {
-              src
-            }
-          }
-        }
+query postQuery($slug: String!) {
+  contentfulPost(slug: {eq: $slug}) {
+    title
+    id
+    slug
+    heroImage {
+      title
+      sizes(maxWidth: 1800) {
+        ...GatsbyContentfulSizes_noBase64
       }
-      fields {
+    }
+    body {
+      childMarkdownRemark {
+        html
+      }
+    }
+    publishDate
+    tags
+  }
+  allContentfulPost(limit: 1000, sort: { fields: [publishDate], order: DESC })  {
+    edges {
+      node {
+        id
+      }
+      previous {
         slug
+        title
       }
-      excerpt
+      next {
+        slug
+        title
+      }
     }
   }
+}
 `;
+
+export default Project;
+
