@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: */imprint/
 
-sitemap: https://embalmer-glues-43220.netlify.com/sitemap.xml
+sitemap: https://jodie.lekoarts.de/sitemap.xml
