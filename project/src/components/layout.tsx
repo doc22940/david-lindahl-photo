@@ -254,8 +254,8 @@ const Layout = ({ children, color }: LayoutProps) => {
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
-              Starter by <a href="https://www.lekoarts.de/en">LekoArts</a>.<br />
-              <a href="https://github.com/LekoArts/gatsby-starter-portfolio-jodie">Source</a>.
+              Copyright <script type="text/javascript">
+                document.write(new Date().getFullYear());</script> David A. Lindahl Photography
             </Box>
           </Footer>
         </Wrapper>

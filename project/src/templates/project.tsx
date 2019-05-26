@@ -101,7 +101,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
     <Layout color={project.color}>
       <SEO
         pathname={project.slug}
-        title={`${project.title_detail} | Jodie`}
+        title={`${project.title_detail} | David Lindahl Photography`}
         desc={project.desc}
         node={project.parent}
         banner={project.cover.childImageSharp.resize.src}
