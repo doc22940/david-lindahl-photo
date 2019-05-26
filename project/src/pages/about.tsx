@@ -3,6 +3,8 @@ import { config, useSpring } from 'react-spring'
 import Layout from '../components/layout'
 import { AnimatedBox } from '../elements'
 import SEO from '../components/SEO'
+import { Link } from 'gatsby'
+
 
 const About = () => {
   const pageAnimation = useSpring({
@@ -34,7 +36,7 @@ I have depths of experience shooting everything from fast moving sports to unmov
         <p>
           Want some fine pictures of people or your products? Looking to collaborate on an upcoming project? 
 
-Get in touch with me using my contact form for more info including scheduling shoots. 
+Get in touch with me using my <Link to="/contact" aria-label="Contact Page">contact form</Link> for more info including scheduling shoots. 
         </p>
       </AnimatedBox>
     </Layout>

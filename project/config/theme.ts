@@ -44,8 +44,8 @@ const theme: ThemeShape = {
     bold: 700,
   },
   sidebarWidth: {
-    big: '375px',
-    normal: '320px',
+    big: '220px',
+    normal: '160px',
   },
 }
 

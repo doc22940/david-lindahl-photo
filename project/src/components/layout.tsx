@@ -254,8 +254,7 @@ const Layout = ({ children, color }: LayoutProps) => {
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
-              Copyright <script type="text/javascript">
-                document.write(new Date().getFullYear());</script> David A. Lindahl Photography
+              Copyright - David A. Lindahl Photography
             </Box>
           </Footer>
         </Wrapper>
