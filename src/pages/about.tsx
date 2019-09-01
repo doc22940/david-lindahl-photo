@@ -3,6 +3,8 @@ import { config, useSpring } from 'react-spring'
 import Layout from '../components/layout'
 import { AnimatedBox } from '../elements'
 import SEO from '../components/SEO'
+import { Link } from 'gatsby'
+
 
 const About = () => {
   const pageAnimation = useSpring({
@@ -13,12 +15,28 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="About | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
+      <SEO title="About | David Lindahl Photography" desc="David Lindahl is a multi-disciplined photographer living and loving life in the PNW. His images capture the beautiful landscapes of the area as well as the people. His travels have taken him to various National Parks." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
-        <h1>Hi. I'm LekoArts!</h1>
+        <h1>Hi. I'm David Lindahl!</h1>
         <p>
-          You can visit my <a href="https://www.lekoarts.de/en">website</a> or my other{' '}
-          <a href="https://gatsby-starter-portfolio.netlify.com">Gatsby projects</a>.
+          I am a photographer based in Seattle — but I'll take any opportunity to travel!
+
+When I'm not taking photos, you'll find me building cool digital things, exploring the interwebs, adventuring in nature or spending time with my friends.
+        </p>
+        <p>
+          I am a photographer based in Seattle — but I'll take any opportunity to travel!
+
+When I'm not taking photos, you'll find me building cool digital things, exploring the interwebs, adventuring in nature or spending time with my friends.
+        </p>
+        <p>
+         Grounded in a photo-journalistic background I have a passion to capture and tell your story in a realistic yet artistic manner. 
+
+I have depths of experience shooting everything from fast moving sports to unmoving rocks and trees. 
+        </p>
+        <p>
+          Want some fine pictures of people or your products? Looking to collaborate on an upcoming project? 
+
+Get in touch with me using my <Link to="/contact" aria-label="Contact Page">contact form</Link> for more info including scheduling shoots. 
         </p>
       </AnimatedBox>
     </Layout>
