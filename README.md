@@ -1,163 +1,174 @@
-![](https://i.imgur.com/M0nwIVi.png)
+# gatsby-starter-gcn
 
-# Gatsby Starter Portfolio: Emma
-
-A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
-
-[Demo Website](https://portfolio-emma.netlify.com/)
-
-- Full-width grid-layout
-- Large images
-- Light theme
-
-## Why?
-
-If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. [Tweet me](https://twitter.com/lekoarts_de) your website made with this starter!
+A starter template to build amazing static websites with Gatsby, Contentful and Netlify. Inspired by [gatsby-contentful-starter](https://github.com/contentful-userland/gatsby-contentful-starter).
 
 ## Features
 
-- Configurable
-    - Use the SiteConfig.js to easily change the most important information
-    - Easily change the font
-- Automatic colors for your projects (with the help of [vibrant.js](https://jariz.github.io/vibrant.js/))
-- Projects in Markdown
-- Google Analytics Support
-- SEO
-    - Sitemap
-    - Schema.org JSONLD
-    - OpenGraph Tags
-    - Twitter Tags
+- Contentful integration with ready to go placeholder content
+- Netlify integration including a pre-built contact form
+- Minimal responsive design - made to customize or tear apart
+- Pagination logic
+- Styled components
+- SEO Friendly Component
+  - JSON-LD Schema
+  - OpenGraph sharing support
+  - Sitemap Generation
+- Google Analytics
+- Progressive Web app
 - Offline Support
-- WebApp Manifest Support
-- Typography.js
-- Responsive images
-    - The right image size for every screen size
-    - Traced SVG loading (lazy-loading)
-    - WebP support
+- RSS Feed
+- [Gatsby Standard module](https://www.npmjs.com/package/eslint-config-gatsby-standard) for linting Javascript with StandardJS
+- Stylelint support for Styled Components to lint the CSS in JS
+
+## Demo
+
+https://gcn.netlify.com/
+
+![](screenshots/demo.jpg)
 
 ## Getting Started
 
-Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
-- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-one/#check-your-development-environment)
-
-To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
+### Install
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-emma
-npm run dev
+git clone https://github.com/ryanwiemer/gatsby-starter-gcn.git
+npm i
 ```
 
-### Adding a new project
-- Create a new folder in ``content/projects`` with the current date (Format: YYYY-MM-DD)
-- Create a new markdown file, add the frontmatter (use the same date format)
-- Add an image and reference it in your frontmatter as ``cover``
-- Write your content below the frontmatter
-
-If you're still unsure have a look at the already existing examples.
-
-### Adding new features/plugins
-
-You can add other features by having a look at the offical [plugins page](https://www.gatsbyjs.org/docs/plugins/)
-
-### Building your site
+Or via the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli)
 
 ```
-npm run build
+gatsby new gatsby-starter-gcn https://github.com/ryanwiemer/gatsby-starter-gcn.git
 ```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
 
-## Configuration
+### Setup Contentful
 
-You can configure your setup in ``config/SiteConfig``:
+1.  [Sign up](https://www.contentful.com/sign-up/) for Contentful and create a new empty space
 
-```JS
+2.  `npm run setup`
+
+3.  Enter in the requested info for your Contentful space found here: **app.contentful.com** → **Space Settings** → **API keys**. You will need to provide both a standard API key (first tab) and a management key (second tab).
+
+## Customization
+
+### Website Data
+
+Edit [`/src/utils/siteConfig.js`](https://github.com/ryanwiemer/gatsby-starter-gcn/blob/master/src/utils/siteConfig.js)
+
+```js
 module.exports = {
-  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  
-  siteTitle: 'Emma', // Navigation and Site Title
-  siteTitleAlt: 'Emma - Gatsby Starter Portfolio', // Alternative Site title for SEO
-  siteUrl: 'https://embalmer-glues-43220.netlify.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Minimalistic bright portfolio with full-width grid and large images',
-  
-  siteFBAppID: '123456789', // Facebook App ID
-  userTwitter: 'emma', // Twitter Username
-  ogSiteName: 'emma', // Facebook Site Name
-  googleAnalyticsID: 'UA-12345689-1',
-  copyright: 'Copyright © 2017. All rights reserved. Pictures by Unsplash.', // Copyright in the footer of the site
-  
-  // You can translate these three words into your language if you want. They'll be shown on the project page header
-  client: 'Client',
-  date: 'Date',
-  service: 'Service',
-
-  // Date format used in your project header
-  // More information here: https://date-fns.org/v1.29.0/docs/format
-  dateFormat: 'DD.MM.YYYY',
-  
-  // Manifest and Progress color
-  themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c',
-  
-  // Settings for typography.js
-  headerFontFamily: 'Merriweather',
-  bodyFontFamily: 'Roboto',
-  baseFontSize: '16px'
+  siteTitle: 'GCN',
+  siteTitleAlt: 'GCN Gatsby Starter',
+  publisher: 'Publisher named GCN',
+  siteDescription:
+    'A starter template to build amazing static websites with Gatsby, Contentful and Netlify',
+  siteUrl: 'https://gcn.netlify.com',
+  postsPerHomePage: 7,
+  postsPerPage: 6,
+  author: 'GCN User',
+  authorUrl: 'https://gcn.netlify.com/about/',
+  userTwitter: '@twitter',
+  shortTitle: 'GCN App',
+  shareImage: '/logos/share.jpg',
+  shareImageWidth: 900,
+  shareImageHeight: 600,
+  siteLogo: '/logos/logo-512.png',
+  backgroundColor: '#e9e9e9',
+  themeColor: '#121212',
+  copyright: 'Copyright © 2018 GCN User',
 }
 ```
 
-You can also configure the styling of the site by editing the SCSS variables in ``config/_variables.scss``:
+**Note:** If you do not see your changes reflected when developing locally you may need to run `npm run clean` and restart the development server.
 
-```SCSS
-// --------------
-// Configuration
-// --------------
+### Theme
 
-// Configure your colors here
+Edit [`/src/styles/theme.js`](https://github.com/ryanwiemer/gatsby-starter-gcn/blob/master/src/styles/theme.js)
 
-$brand-primary: #cf1993;
-$brand-secondary: #7b8acc;
-$grey: #252525;
-$black: #000000;
-
-// Configure your grid here
-// You don't need to change it!
-
-$content-width: 100vw;
-$gutter: 0px;
-$columns: 3;
-
-$row-size: calc( (#{$content-width} - #{$gutter} * (#{$columns} - 1)) / #{$columns} );
-
-// Configure the max-width of your containers here
-// Try to keep it in sync with maxWidth of `gatsby-remark-images`
-
-$container: 100rem;
-$container-text: 55rem; // Longer texts should have a smaller max-width to improve readability
-
-// Responsive Typography
-// You can set your min and max font-size here
-// More information: https://www.rucksackcss.org/docs/#responsive-type
-
-html {
-    font-size: responsive 12px 16px;
-    font-range: 420px 1280px;
+```js
+const theme = {
+  colors: {
+    base: '#121212',
+    secondary: '#e9e9e9',
+    tertiary: '#f3f3f3',
+    highlight: '#5b8bf7',
+  },
+  sizes: {
+    maxWidth: '1200px',
+    maxWidthCentered: '650px',
+  },
+  responsive: {
+    small: '35em',
+    medium: '50em',
+    large: '70em',
+  },
 }
 ```
 
-**Attention:** You also need to edit ``static/robots.txt`` to include your domain!
+### Using Gatsby Standard
 
-## Automatic Colors
+1.  Quickly check your code for errors with the `npm test` script
+2.  You can view the [Gatsby Standard README](https://github.com/brandonkal/eslint-config-gatsby-standard) for details on how to integrate this project's included Gatsby Standard, Stylelint, and Prettier modules into your text editor
 
-By default the hover overlay of the grid image and the header on the project page automatically choose its color by using [react-palette](https://github.com/leonardokl/react-palette).
-The plugin chooses the *vibrant* color of the image and applies it as the ``background-color`` for the hover overlay and header background. If you don't want that behavior you can delete the ``<Palette />`` component both from ``pages/index.jsx`` and ``templates/project.jsx``.
+### Content and SEO
 
-## Credits
+1.  You can replace the `share.jpg` and `logo-512` files in the `static/logos` directory. After replacing these files ensure that you edit the image size dimensions specified in `/src/utils/siteConfig.js`
+2.  Meta descriptions are defined in Contentful. If you choose to leave this field blank on new posts a 320 character excerpt of the post/page will be used.
+3.  **IMPORTANT:** Be sure to manually enter at least one meta description on a page and post in Contentful or the site will fail to build.
 
-- Inspired by [gatsby-advanced-starter](https://github.com/Vagr9K/gatsby-advanced-starter)
+## Deployment
 
-## About Me
+### Manual Netlify Deployment
 
-Thanks for using my *gatsby-starter*. I hope you like it and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
+1.  Run `gatsby build`
+
+2.  Drag and drop the folder `/public/` into Netlify
+
+### Netlify Deployment From Git (Recommended)
+
+1.  [New Netlify website from Git](https://app.netlify.com/start)
+
+2.  Connect with GitHub and select your repo
+
+3.  Navigate to Netlify: **Settings** → **Build & Deploy** → **Build Environment Variables**. Add the following environment variables using the Space ID and Content Delivery API - access token from Contentful. Additionally if desired you can enter a Google Analytics ID. The variables must be named exactly like this in order to work properly.
+
+```
+ACCESS_TOKEN
+SPACE_ID
+GOOGLE_ANALYTICS
+```
+
+![](screenshots/netlify-build-environment-variables.jpg)
+
+4.  Navigate to Netlify: **Deploys**. Click `Trigger deploy` to manually trigger a deploy to confirm the website is building successfully using your build environment variables. At this point be aware that every time you push to `master` a deploy will automatically start and be published to production.
+
+## Additional Settings
+
+### Contentful Webhook (Optional)
+
+1.  Navigate to Netlify:
+    **Settings** → **Build & Deploy** → **Build hooks**.
+    Create a new build hook.
+
+2.  Navigate to Contentful:
+    **app.contentful.com** → **Space Settings** → **Webhooks**. Create a webhook using the Netlify build URL that you just created
+    and configure which events should trigger the build on production. For example the following will rebuild the production website every time a post or page is published, unpublished or deleted:
+
+![](screenshots/contentful-webhook-selected-events.jpg)
+
+### Netlify Form Notifications (Optional)
+
+1.  Navigate to Netlify:
+    **Forms** → **Notifications**
+
+2.  Click the add notification dropdown and select your desired notification method.
+
+![](screenshots/netlify-form-notifcations.jpg)
+
+## Useful Tips
+
+- If you make edits to your Contentful space while running `gatsby develop` you will need to stop it and rerun the command to see the changes reflected. For example a new post or page will not automatically show up until the website has been rebuilt.
+- The template assumes you have at least **one page**, **one post** and **one tag** in Contentful. If you do not the website will fail to build.
+- The SEO component assumes you have entered at least one meta description in Contentful for a post and one for a page. If you do not the website will fail to build. See the Content and SEO section above.
+- **DO NOT** store your Contentful access tokens or space ids anywhere in GitHub. Treat them like passwords.
+- **Yarn Users:** remove the `yarn*` line from the `.gitignore` file to avoid discrepancies in the Netlify deploy.
