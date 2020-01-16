@@ -5,9 +5,9 @@ module.exports = {
   siteDescription:
     'David Lindahl is a passionate PNW-based photographer with a ten year history of photography in the areas of photojournalism, adventure, lifestyle and mobile photography.',
   siteUrl: 'https://davidlindahlphoto.com', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
-  postsPerHomePage: 7, // Number of posts shown on the 1st page of of the index.js template (home page)
+  postsPerHomePage: 4, // Number of posts shown on the 1st page of of the index.js template (home page)
   postsPerPage: 6, // Number of posts shown on paginated pages
-  author: 'GCN User', // Author for RSS author segment and SEO schema
+  author: 'David Lindahl', // Author for RSS author segment and SEO schema
   authorUrl: 'https://davidlindahlphoto.com/about/', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@davidlindahlphoto', // Change for Twitter Cards
   shortTitle: 'DL Photo', // Used for App manifest e.g. Mobile Home Screen
@@ -17,5 +17,5 @@ module.exports = {
   siteLogo: '/logos/logo-512.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#e9e9e9', // Used for Offline Manifest
   themeColor: '#121212', // Used for Offline Manifest
-  copyright: 'Copyright © 2019 David Lindahl Photography', // Copyright string for the RSS feed
+  copyright: 'Copyright © 2020 David Lindahl Photography', // Copyright string for the RSS feed
 }
