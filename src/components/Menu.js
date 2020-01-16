@@ -51,13 +51,18 @@ const Menu = () => {
         <ul>
           <li>
             <Link to="/" activeStyle={activeLinkStyle}>
-              Home
+              David Lindahl Photography
             </Link>
           </li>
           <li>
             <Link to="/about/" activeStyle={activeLinkStyle}>
               About
             </Link>
+          </li>
+          <li>
+            <a target="_blank" to="https://davidlindahlphoto.pixieset.com/">
+              Prints
+            </a>
           </li>
           <li>
             <Link to="/contact/" activeStyle={activeLinkStyle}>

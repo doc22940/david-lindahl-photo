@@ -59,6 +59,32 @@ const Footer = () => (
       </Item>
       <Item>
         <a
+          href="https://www.gatsbyjs.com/"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            src="https://www.gatsbyjs.org/Gatsby-Logo.svg"
+            style={{ width: '100px' }}
+            alt="Powered by GatsbyJS"
+          />
+        </a>
+      </Item>
+      <Item>
+        <a
+          href="https://www.netlify.com/"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            src="https://www.netlify.com/img/press/logos/full-logo-light.svg"
+            style={{ width: '100px' }}
+            alt="Powered by Netlify"
+          />
+        </a>
+      </Item>
+      {/* <Item>
+        <a
           href="https://github.com/ryanwiemer/gatsby-starter-gcn"
           target="_blank"
           rel="noopener noreferrer"
@@ -73,7 +99,7 @@ const Footer = () => (
         >
           @ryanwiemer
         </a>
-      </Item>
+      </Item> */}
     </List>
   </Wrapper>
 )

@@ -44,10 +44,10 @@ const Title = styled.h2`
   margin: 1rem 1rem 0.5rem 1rem;
 `
 
-const Date = styled.h3`
-  margin: 0 1rem 0.5rem 1rem;
-  color: gray;
-`
+// const Date = styled.h3`
+//   margin: 0 1rem 0.5rem 1rem;
+//   color: gray;
+// `
 
 const ReadingTime = styled.h4`
   margin: 0 1rem 1.5rem 1rem;
@@ -63,7 +63,7 @@ const Card = ({
   slug,
   heroImage,
   title,
-  publishDate,
+  // publishDate,
   body,
   body: {
     childMarkdownRemark: { timeToRead },
@@ -75,8 +75,8 @@ const Card = ({
       <Link to={`/${slug}/`}>
         <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
         <Title>{title}</Title>
-        <Date>{publishDate}</Date>
-        <ReadingTime>{timeToRead} min read</ReadingTime>
+        {/* <Date>{publishDate}</Date> 
+        <ReadingTime>{timeToRead} min read</ReadingTime> */}
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
