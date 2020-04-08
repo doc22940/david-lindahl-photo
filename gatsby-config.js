@@ -31,6 +31,19 @@ module.exports = {
     },
   },
   plugins: [
+      {
+          resolve: 'gatsby-plugin-fathom',
+          options: {
+              // Fathom server URL. Defaults to `cdn.usefathom.com`
+            //   trackingUrl: 'your-fathom-instance.com',
+              // Unique site id
+              siteId: 'SWPWYLIK',
+              // Domain whitelist
+            //   whitelistHostnames: [
+            //       'yoursite.com'
+            //   ]
+          }
+      },
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
